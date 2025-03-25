@@ -11,8 +11,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        //double rendaFamiliar, gastoComLuz, gastoComAgua, gastoComInternet, valorMensalidadeDaAcademia, calcularTotalDeDespesas, calcularRendaFamiliarLiquida;
-        //int numeroDeMoradores;
+        double rendaFamiliar, gastoComLuz, gastoComAgua, gastoComInternet, valorMensalidadeDaAcademia, calcularTotalDeDespesas, calcularRendaFamiliarLiquida, totalDespesas, rendaFamiliarLiquida;
+        int numeroDeMoradores;
 
         Scanner scan;
         DespesaFamiliar despesa = new DespesaFamiliar();
@@ -20,25 +20,32 @@ public class Main {
         try {
             scan = new Scanner(System.in);
             System.out.print("Digite o valor da RENDA FAMILIAR:\n-> ");
-            despesa.rendaFamiliar = scan.nextDouble();
+            rendaFamiliar = scan.nextDouble();
 
             System.out.print("Digite o valor do NÚMERO DE MORADORES:\n-> ");
-            despesa.numeroDeMoradores = scan.nextInt();
+            numeroDeMoradores = scan.nextInt();
 
             System.out.print("Digite o valor do GASTO COM LUZ:\n-> ");
-            despesa.gastoComLuz = scan.nextDouble();
+            gastoComLuz = scan.nextDouble();
 
             System.out.print("Digite o valor do GASTO COM AGUA:\n-> ");
-            despesa.gastoComAgua = scan.nextDouble();
+            gastoComAgua = scan.nextDouble();
 
             System.out.print("Digite o valor do GASTO COM INTERNET:\n-> ");
-            despesa.gastoComInternet = scan.nextDouble();
+            gastoComInternet = scan.nextDouble();
 
             System.out.print("Digite o valor da MENSALIDADE DA ACADEMIA:\n-> ");
-            despesa.valorMensalidadeDaAcademia = scan.nextDouble();
+            valorMensalidadeDaAcademia = scan.nextDouble();
 
-            double totalDespesas = despesa.calcularTotalDeDespesas();
-            double rendaFamiliarLiquida = despesa.calcularRendaFamiliarLiquida(totalDespesas);
+            despesa.rendaFamiliar = rendaFamiliar;
+            despesa.numeroDeMoradores = numeroDeMoradores;
+            despesa.gastoComLuz = gastoComLuz;
+            despesa.gastoComAgua = gastoComAgua;
+            despesa.gastoComInternet = gastoComInternet ;
+            despesa.valorMensalidadeDaAcademia = valorMensalidadeDaAcademia;
+
+            totalDespesas = despesa.calcularTotalDeDespesas();
+            rendaFamiliarLiquida = despesa.calcularRendaFamiliarLiquida(totalDespesas);
 
             System.out.printf("A despesa total da família é de: R$ %.2f%n\nA renda familiar liquida da família é: R$ %.2f%n", totalDespesas, rendaFamiliarLiquida);
 

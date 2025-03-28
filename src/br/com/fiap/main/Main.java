@@ -47,7 +47,7 @@ public class Main {
             totalDespesas = despesa.calcularTotalDeDespesas();
             rendaFamiliarLiquida = despesa.calcularRendaFamiliarLiquida();
 
-            System.out.printf("A despesa total da família é de: R$ %.2f%n\nA renda familiar liquida da família é: R$ %.2f%n", totalDespesas, rendaFamiliarLiquida);
+            System.out.printf("A renda familiar da família é: R$ %.2f%n\nA despesa total da família é de: R$ %.2f%n\nA renda familiar liquida da família é: R$ %.2f%n", rendaFamiliar, totalDespesas, rendaFamiliarLiquida);
 
         } catch (Exception e) {
             System.out.println("Tipo de dado incorreto!");

@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        double rendaFamiliar, gastoComLuz, gastoComAgua, gastoComInternet, valorMensalidadeDaAcademia, calcularTotalDeDespesas, calcularRendaFamiliarLiquida, totalDespesas, rendaFamiliarLiquida;
+        double rendaFamiliar, gastoComLuz, gastoComAgua, gastoComInternet, valorMensalidadeDaAcademia, totalDespesas, rendaFamiliarLiquida;
         int numeroDeMoradores;
 
         Scanner scan;
@@ -45,14 +45,12 @@ public class Main {
             despesa.valorMensalidadeDaAcademia = valorMensalidadeDaAcademia;
 
             totalDespesas = despesa.calcularTotalDeDespesas();
-            rendaFamiliarLiquida = despesa.calcularRendaFamiliarLiquida(totalDespesas);
+            rendaFamiliarLiquida = despesa.calcularRendaFamiliarLiquida();
 
             System.out.printf("A despesa total da família é de: R$ %.2f%n\nA renda familiar liquida da família é: R$ %.2f%n", totalDespesas, rendaFamiliarLiquida);
 
-            //System.out.printf("A renda familiar liquida da família é: R$ %.2f%n", rendaFamiliarLiquida);
-
         } catch (Exception e) {
-            System.out.printf("Ocorreu um erro: %s%n", e.getMessage());
+            System.out.println("Tipo de dado incorreto!");
         }
 
     }
